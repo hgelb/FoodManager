@@ -1,0 +1,46 @@
+<form novalidate [formGroup]="form" dir="rtl">
+  <h1 mat-dialog-title>הוספת פריט</h1>
+  <div mat-dialog-content>
+    <p>שם</p>
+    <mat-form-field>
+      <input matInput tabindex="1" formControlName="name">
+    </mat-form-field>
+    <p>יחידת אחסון</p>
+    <mat-form-field>
+      <mat-select placeholder="יחידת אחסון" formControlName="storageId">
+        <mat-option *ngFor="let item of storage" [value]="item.id">
+          {{ item.name }} ({{locations[item.locationId].name}})
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p>קטגוריה</p>
+    <mat-form-field>
+      <mat-select placeholder="קטגוריה" formControlName="categoryId">
+        <mat-option *ngFor="let item of categories" [value]="item.id">
+          {{ item.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div *ngIf="form.controls.id.value">
+      <p>סטטוס</p>
+      <mat-form-field>
+        <mat-select placeholder="סטטוס" formControlName="statusId">
+          <mat-option *ngFor="let item of statuses" [value]="item.id">
+            {{ item.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <p>תאריך תפוגה</p>
+    <mat-form-field>
+      <input type="date" matInput tabindex="1" formControlName="expiration">
+    </mat-form-field>
+  </div>
+  <div>
+    *נא למלא ערכים בכל השדות
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()" tabindex="-1">ביטול</button>
+    <button mat-button [mat-dialog-close]="form" tabindex="2" [disabled]="!form.valid">אישור</button>
+  </div>
+</form>

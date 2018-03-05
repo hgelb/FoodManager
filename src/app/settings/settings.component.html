@@ -1,0 +1,114 @@
+<div dir="ltr">
+  <mat-tab-group>
+    <mat-tab label="מרחבי אחסון">
+      <button (click)="openStorageDialog(null)" mat-button class="left add-button">הוסף מרחב אחסון
+        <mat-icon>add</mat-icon>
+      </button>
+      <table cellpadding="0" cellspacing="0">
+        <thead>
+        <tr>
+          <th>שם</th>
+          <th>מיקום</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of storage">
+          <td>{{item.name}}</td>
+          <td>{{locationsDictionary[item.locationId] && locationsDictionary[item.locationId].name}}</td>
+          <td class="actions">
+            <button matTooltip="ערוך" (click)="openStorageDialog(item)" mat-button>
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button matTooltip="מחק" (click)="deleteStorage(item.id)" mat-button>
+              <mat-icon>close</mat-icon>
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </mat-tab>
+    <mat-tab label="מיקומים">
+      <button (click)="openLocationsDialog(null)" mat-button class="left add-button">הוסף מיקום
+        <mat-icon>add</mat-icon>
+      </button>
+      <table cellpadding="0" cellspacing="0">
+        <thead>
+        <tr>
+          <th>שם</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of locations">
+          <td>{{item.name}}</td>
+          <td class="actions">
+            <button matTooltip="ערוך" (click)="openLocationsDialog(item)" mat-button>
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button matTooltip="מחק" (click)="deleteLocation(item.id)" mat-button>
+              <mat-icon>close</mat-icon>
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </mat-tab>
+    <mat-tab label="התראות">
+      <button (click)="openNotificationsDialog(null)" mat-button class="left add-button">הוסף התראה
+        <mat-icon>add</mat-icon>
+      </button>
+      <table cellpadding="0" cellspacing="0">
+        <thead>
+        <tr>
+          <th>ימים טרם תאריך תפוגה</th>
+          <th>קטגוריה</th>
+          <th>צבע</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of notifications">
+          <td>{{item.daysBefore}}</td>
+          <td>{{categoriesDictionary[item.categoryId] && categoriesDictionary[item.categoryId].name}}</td>
+          <td [ngStyle]="{'color': item.color}">{{ colorHebEng[item.color] }}</td>
+          <td class="actions">
+            <button matTooltip="ערוך" (click)="openNotificationsDialog(item)" mat-button>
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button matTooltip="מחק" (click)="deleteNotification(item.id)" mat-button>
+              <mat-icon>close</mat-icon>
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </mat-tab>
+    <mat-tab label="קטגוריות">
+      <button (click)="openCategoriesDialog(null)" mat-button class="left add-button">הוסף קטגוריה
+        <mat-icon>add</mat-icon>
+      </button>
+      <table cellpadding="0" cellspacing="0">
+        <thead>
+        <tr>
+          <th>שם</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of categories">
+          <td>{{item.name}}</td>
+          <td class="actions">
+            <button matTooltip="ערוך" (click)="openCategoriesDialog(item)" mat-button>
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button matTooltip="מחק" (click)="deleteCategory(item.id)" mat-button>
+              <mat-icon>close</mat-icon>
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </mat-tab>
+  </mat-tab-group>
+</div>

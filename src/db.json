@@ -1,0 +1,126 @@
+{
+  "locations": [
+    {
+      "id": 1,
+      "name": "מטבח1222",
+      "details": null
+    },
+    {
+      "id": 2,
+      "name": "מחסן111",
+      "details": null
+    },
+    {
+      "id": 3,
+      "name": "עליית גג"
+    },
+    {
+      "id": 4,
+      "name": "מרתף",
+      "details": null
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "מוצרי חלב 1"
+    },
+    {
+      "id": 2,
+      "name": "בשר"
+    },
+    {
+      "id": 11,
+      "name": "שימורים"
+    }
+  ],
+  "notifications": [
+    {
+      "id": 1,
+      "categoryId": 1,
+      "color": "yellow",
+      "daysBefore": 3
+    },
+    {
+      "id": 4,
+      "daysBefore": 4,
+      "categoryId": 1,
+      "color": "blue"
+    },
+    {
+      "id": 5,
+      "daysBefore": 2,
+      "categoryId": 2,
+      "color": "orange"
+    },
+    {
+      "id": 6,
+      "daysBefore": 4,
+      "categoryId": 11,
+      "color": "red"
+    }
+  ],
+  "storage": [
+    {
+      "id": 2,
+      "name": "מקפיא דגים",
+      "locationId": 2
+    },
+    {
+      "id": 3,
+      "name": "מקרר יין (2)",
+      "locationId": 3
+    },
+    {
+      "id": 4,
+      "name": "מזווה",
+      "locationId": 4
+    }
+  ],
+  "status": [
+    {
+      "id": 1,
+      "name": "נוצר"
+    },
+    {
+      "id": 2,
+      "name": "נצרך"
+    },
+    {
+      "id": 3,
+      "name": "נזרק"
+    }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "name": "גבינה לבנה 1",
+      "categoryId": 1,
+      "storageId": 3,
+      "expiration": "2017-12-31",
+      "statusId": 1,
+      "expirationDisplay": null,
+      "notificationColor": null
+    },
+    {
+      "id": 2,
+      "name": "פיצה",
+      "categoryId": 1,
+      "storageId": 2,
+      "expiration": "2018-03-18",
+      "statusId": 1,
+      "expirationDisplay": null,
+      "notificationColor": null
+    },
+    {
+      "id": 3,
+      "name": "תירס",
+      "categoryId": 11,
+      "storageId": 4,
+      "expiration": "2018-03-08",
+      "statusId": 1,
+      "expirationDisplay": null,
+      "notificationColor": null
+    }
+  ]
+}

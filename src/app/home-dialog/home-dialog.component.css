@@ -1,0 +1,8 @@
+section{
+  direction: rtl;
+  text-align: center;
+}
+
+section > .mat-dialog-actions{
+  justify-content: center;
+}

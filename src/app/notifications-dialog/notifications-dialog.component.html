@@ -1,0 +1,40 @@
+<form novalidate [formGroup]="form" dir="rtl">
+  <h1 mat-dialog-title>הוספת התראה</h1>
+  <div mat-dialog-content>
+    <p>ימים טרם תאריך תפוגה</p>
+    <mat-form-field>
+      <input autocomplete="off" matInput tabindex="1" type="number" formControlName="daysBefore" (input)="onChange()">
+    </mat-form-field>
+    <p>צבע</p>
+    <mat-form-field>
+      <mat-select placeholder="צבע" formControlName="color" (change)="onChange();">
+        <mat-option *ngFor="let color of colors" [value]="color" [ngStyle]="{color: color}">
+          {{ colorHebEng[color] }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p>צבע</p>
+    <mat-form-field>
+      <mat-select placeholder="קטגוריה" formControlName="categoryId" (change)="onChange();">
+        <mat-option *ngFor="let item of categories" [value]="item.id">
+          {{ item.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    *נא למלא ערכים בכל השדות
+  </div>
+  <div class="error" [ngClass]="{'hidden': !daysError}">
+    קיימת התראה עם מספר ימים זהה עבור הקטגוריה שנבחרה
+  </div>
+  <div class="error" [ngClass]="{'hidden': !colorError}">
+    קיימת התראה עם צבע זהה
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()" tabindex="-1">ביטול</button>
+    <button mat-button [mat-dialog-close]="form" tabindex="2" [disabled]="!form.valid || daysError || colorError">
+      אישור
+    </button>
+  </div>
+</form>

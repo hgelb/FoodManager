@@ -1,0 +1,57 @@
+<section>
+
+  <div class="example-container mat-elevation-z8 table-container">
+    <h3>רשימת פריטים</h3>
+    <button (click)="openDialog(null)" mat-button class="left add-button">הוסף פריט
+      <mat-icon>add</mat-icon>
+    </button>
+    <div class="example-header">
+      <mat-form-field>
+        <!-- bananas in a box 2 ways data binding-->
+        <input matInput (keyup)="applyFilter()" [(ngModel)]="filter" placeholder="סינון">
+      </mat-form-field>
+      <mat-checkbox class="throw-filter" (change)="applyFilter()" [(ngModel)]="thrownOnly">הצג רק פריטים שנזרקו
+      </mat-checkbox>
+    </div>
+    <table cellpadding="0" cellspacing="0">
+      <thead>
+      <tr>
+        <th>שם</th>
+        <th>יחידת אחסון</th>
+        <th>קטגוריה</th>
+        <th>מיקום</th>
+        <th>סטטוס</th>
+        <th>תאריך תפוגה</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of filteredItems" [ngStyle]="{'background-color': item.notificationColor}">
+        <td>{{item.name}}</td>
+        <td>{{storage[item.storageId] && storage[item.storageId].name}}</td>
+        <td>{{categories[item.categoryId] && categories[item.categoryId].name}}</td>
+        <td>{{storage[item.storageId] && locations[storage[item.storageId].locationId] &&
+          locations[storage[item.storageId].locationId].name}}
+        </td>
+        <td>{{statuses[item.statusId] && statuses[item.statusId].name}}</td>
+        <td>{{item.expirationDisplay}}</td>
+        <td class="actions">
+          <button (click)="openDialog(item)" mat-button matTooltip="ערוך">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button (click)="eatItem(item)" mat-button matTooltip="סמן נאכל">
+            <mat-icon>done</mat-icon>
+          </button>
+          <button (click)="throwItem(item)" mat-button matTooltip="סמן נזרק">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <button (click)="deleteItem(item.id)" mat-button matTooltip="מחק">
+            <mat-icon>close</mat-icon>
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="total">סה"כ פריטים {{items.length}}</div>
+  </div>
+</section>

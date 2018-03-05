@@ -1,0 +1,19 @@
+<form novalidate [formGroup]="form" dir="rtl">
+  <h1 mat-dialog-title>הוספת קטגוריה</h1>
+  <div mat-dialog-content>
+    <p>שם</p>
+    <mat-form-field>
+      <input autocomplete="off" matInput tabindex="1" formControlName="name" (input)="checkDuplicate()">
+    </mat-form-field>
+  </div>
+  <div>
+    *נא למלא ערכים בכל השדות
+  </div>
+  <div class="error"[ngClass]="{'hidden': !isDuplicate}">
+    קיימת קטגוריה עם פרטים זהים
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()" tabindex="-1">ביטול</button>
+    <button mat-button [mat-dialog-close]="form" tabindex="2" [disabled]="!form.valid || isDuplicate">אישור</button>
+  </div>
+</form>

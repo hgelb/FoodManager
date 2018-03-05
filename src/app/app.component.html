@@ -1,0 +1,15 @@
+<!--<a routerLink="/home">home</a>-->
+<!--<a routerLink="/settings">settings</a>-->
+<main>
+  <div class="top-bar">
+    <a *ngIf="router.url !== '/settings'" routerLink="/settings" mat-button class="settings-icon">
+      הגדרות
+      <mat-icon>settings</mat-icon>
+    </a>
+    <a *ngIf="router.url === '/settings'" routerLink="/home" mat-button class="settings-icon">
+      מסך בית
+      <mat-icon>home</mat-icon>
+    </a>
+  </div>
+  <router-outlet></router-outlet>
+</main>

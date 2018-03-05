@@ -1,0 +1,135 @@
+{
+  "locations": [
+    {
+      "id": 1,
+      "name": "מטבח"
+    },
+    {
+      "id": 2,
+      "name": "מחסן"
+    },
+    {
+      "id": 3,
+      "name": "עליית גג"
+    },
+    {
+      "id": 5,
+      "name": "aaaaaaa"
+    },
+    {
+      "id": 6,
+      "name": "bbbbbbb"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "מוצרי חלב"
+    },
+    {
+      "id": 2,
+      "name": "בשר"
+    },
+    {
+      "id": 7,
+      "name": "a1"
+    },
+    {
+      "id": 8,
+      "name": "a2"
+    },
+    {
+      "id": 9,
+      "name": "a3"
+    },
+    {
+      "id": 10,
+      "name": "a6"
+    }
+  ],
+  "notifications": [
+    {
+      "id": 1,
+      "categoryId": 1,
+      "color": "yellow",
+      "daysBefore": 3
+    },
+    {
+      "id": 3,
+      "categoryId": 1,
+      "color": "green",
+      "daysBefore": 12
+    },
+    {
+      "id": 4,
+      "daysBefore": 4,
+      "categoryId": 1,
+      "color": "blue"
+    },
+    {
+      "id": 5,
+      "daysBefore": 2,
+      "categoryId": 2,
+      "color": "orange"
+    },
+    {
+      "id": 6,
+      "daysBefore": 3,
+      "categoryId": 2,
+      "color": "red"
+    }
+  ],
+  "storage": [
+    {
+      "id": 2,
+      "name": "מקפיא דגים",
+      "locationId": 2
+    },
+    {
+      "id": 3,
+      "name": "מקרר יין",
+      "locationId": 3
+    },
+    {
+      "id": 4,
+      "name": "dasds",
+      "locationId": 2
+    },
+    {
+      "id": 5,
+      "name": "adasda",
+      "locationId": 5
+    },
+    {
+      "id": 6,
+      "name": "hththt",
+      "locationId": 6
+    }
+  ],
+  "status": [
+    {
+      "id": 1,
+      "name": "נוצר"
+    },
+    {
+      "id": 2,
+      "name": "נצרך"
+    },
+    {
+      "id": 3,
+      "name": "נזרק"
+    }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "name": "גבינה לבנה",
+      "categoryId": 1,
+      "storageId": 3,
+      "expiration": "2017-12-31",
+      "statusId": 1,
+      "expirationDisplay": null,
+      "notificationColor": null
+    }
+  ]
+}
